@@ -1,0 +1,59 @@
+import React, { useEffect, useState } from 'react'
+import SideNav from './template/SideNav'
+import TopNav from './template/TopNav'
+import Header from './template/Header'
+import axios from '../utils/Axios'
+import HorizontalCards from './template/HorizontalCards'
+import Dropdown from './template/Dropdown'
+
+const Home = () => {
+  document.title = "SCSDB | Homepage"
+  const [wallpaper, setwallpaper] = useState(null)
+  const [trending, settrending] = useState(null);
+
+    const getHeaderWallpaper = async ()=>{
+        try{
+            const {data} = await axios.get('trending/movie/day')
+            const wall = data.results[(Math.random()*data.results.length).toFixed()]
+            setwallpaper(wall)
+            
+        }
+        catch(error){
+            console.log("error :",error )
+        }
+    } 
+    // console.log(wallpaper)
+
+    const getTrending = async()=>{
+      const {data} = await axios.get('trending/movie/day')
+      settrending(data.results);
+    }
+    useEffect(()=>{
+        !wallpaper && getHeaderWallpaper()
+        !trending && getTrending()
+    },[])
+    // console.log(trending)
+  return wallpaper && trending ? (
+    <div className='w-full h-full flex'>
+        <SideNav/>
+        <div className='w-[80%] h-full flex flex-col'>
+        <div className='w-full  overflow-y-auto '>
+        <TopNav/>
+        </div>
+        <div className='w-full h-full overflow-y-auto '>
+          
+          <Header wallpaper={wallpaper}/>
+          <div className=" mb-5 flex items-center justify-between p-5">
+        <h1 className="text-zinc-400 text-3xl font-semibold">Trending</h1>
+        <Dropdown />
+      </div>
+          <HorizontalCards trending = {trending}/>
+          
+        </div>
+        </div>
+        
+    </div>
+  ) : <h1>Loading</h1>
+}
+
+export default Home
