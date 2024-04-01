@@ -103,7 +103,7 @@ const PeopleDetails = () => {
             <h1 className="text-lg text-zinc-400 font-semibold mt-2">
               Birthday
             </h1>
-            <h1 className="text-md text-zinc-400 ">{info.details.birthday}</h1>
+            {info.details.birthday ? <h1 className="text-md text-zinc-400 ">{info.details.birthday}</h1> : <h1 className="text-md text-zinc-400 ">Don't have the data</h1>}
           </div>
 
           <div>
