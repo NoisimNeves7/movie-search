@@ -15,7 +15,7 @@ const Trending = () => {
   const [trending, settrending] = useState([]);
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true)
-  document.title = "SCSDB | Trending " + category.toUpperCase();
+  document.title = "NEVES7 | Trending " + category.toUpperCase();
   const getTrending = async () => {
     try {
       const { data } = await axios.get(
@@ -79,7 +79,7 @@ const Trending = () => {
         hasMore={hasMore}
         loader={<h1>loading....</h1>}
       >
-        <Cards data={trending} />
+        <Cards data={trending} title={category}/>
       </InfiniteScroll>
     </div>
   ) : (

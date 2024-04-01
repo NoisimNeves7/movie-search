@@ -29,7 +29,7 @@ const TopNav = () => {
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         type="text"
-        placeholder="Search Anything"
+        placeholder="Search for a movie ,tv show ,person....."
         className="bg-transparent border-none outline-none mx-5 p-5 text-zinc-200 w-[50%] "
       />
       {query && (
@@ -40,6 +40,7 @@ const TopNav = () => {
         {searches.map((value, index) => {
           return (
             <Link
+            to={`/${value.media_type}/detail/${value.id}`}
               key={index}
               className="border-b-2 border-zinc-100 p-8  w-[100%] text-zinc-600 flex items-center justify-start text-lg font-semibold hover:bg-zinc-300 hover:text-black duration-300"
             >

@@ -14,7 +14,7 @@ const Movies = () => {
     const [movies, setmovies] = useState([]);
     const [page, setpage] = useState(1);
     const [hasMore, sethasMore] = useState(true)
-    document.title = "SCSDB | Movies " 
+    document.title = "NEVES7 | Movies " 
 
     const getMovies = async () => {
         try {
@@ -73,7 +73,7 @@ const Movies = () => {
         hasMore={hasMore}
         loader={<h1>loading....</h1>}
       >
-        <Cards data={movies} />
+        <Cards data={movies} title={"movie"}/>
       </InfiniteScroll>
     </div>
   ) : (

@@ -7,6 +7,13 @@ import Popular from './components/Popular'
 import Movies from './components/Movies'
 import TvShows from './components/TvShows'
 import People from './components/People'
+import MovieDetails from './components/MovieDetails'
+import TvDetails from './components/TvDetails'
+import PeopleDetails from './components/PeopleDetails'
+import Trailer from './components/template/Trailer'
+import NotFound from './components/template/NotFound'
+import Contact from './components/template/Contact'
+import About from './components/About'
 // import LocomotiveScroll from 'locomotive-scroll';
 
 const App = () => {
@@ -18,9 +25,19 @@ const App = () => {
         <Route path='/' element={<Home/>}/>
         <Route path='/trending' element={<Trending/>} />
         <Route path='/popular' element={<Popular/>} />
-        <Route path='/movies' element={<Movies/>} />
-        <Route path='/tv_shows' element={<TvShows/>} />
-        <Route path='/people' element={<People/>} />
+        <Route path='/movie' element={<Movies/>} />
+        <Route path='/movie/detail/:id' element={<MovieDetails/>} >
+          <Route path='/movie/detail/:id/trailer' element={<Trailer/>}/>
+        </Route>
+        <Route path='/tv' element={<TvShows/>} />
+        <Route path='/tv/detail/:id' element={<TvDetails/>} >
+        <Route path='/tv/detail/:id/trailer/' element={<Trailer/>}/>
+        </Route>
+        <Route path='/person' element={<People/>} />
+        <Route path='/person/detail/:id' element={<PeopleDetails/>} />
+        <Route path='/contact' element={<Contact/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='*' element={<NotFound/>} />
       </Routes>
       
     </div>

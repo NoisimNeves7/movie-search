@@ -14,7 +14,7 @@ const People = () => {
     const [people, setpeople] = useState([]);
     const [page, setpage] = useState(1);
     const [hasMore, sethasMore] = useState(true)
-    document.title = "SCSDB | People " 
+    document.title = "NEVES7 | People " 
 
     const getPeople = async () => {
         try {
@@ -42,7 +42,7 @@ const People = () => {
           getPeople();
         }
       };
-      console.log(people)
+      // console.log(people)
       useEffect(() => {
         refreshHandler();
       }, [category]);
@@ -70,7 +70,7 @@ const People = () => {
         hasMore={hasMore}
         loader={<h1>loading....</h1>}
       >
-        <Cards data={people} />
+        <Cards data={people} title={"person"}/>
       </InfiniteScroll>
     </div>
   ) : (

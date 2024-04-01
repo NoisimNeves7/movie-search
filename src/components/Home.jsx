@@ -8,7 +8,7 @@ import Dropdown from "./template/Dropdown";
 import Loader from "./template/Loader";
 
 const Home = () => {
-  document.title = "SCSDB | Homepage";
+  document.title = "NEVES7 | Homepage";
   const [wallpaper, setwallpaper] = useState(null);
   const [trending, settrending] = useState(null);
   const [category, setcategory] = useState("all")

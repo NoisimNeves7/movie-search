@@ -14,7 +14,7 @@ const TvShows = () => {
   const [tv, settv] = useState([]);
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true)
-  document.title = "SCSDB | Tv Shows ";
+  document.title = "NEVES7 | Tv Shows ";
 
   const getTv = async () => {
     try {
@@ -73,7 +73,7 @@ const TvShows = () => {
         hasMore={hasMore}
         loader={<h1>loading....</h1>}
       >
-        <Cards data={tv} />
+        <Cards data={tv} title={"tv"}/>
       </InfiniteScroll>
     </div>
   ) : (

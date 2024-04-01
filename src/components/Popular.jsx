@@ -14,7 +14,7 @@ const Popular = () => {
   const [popular, setpopular] = useState([]);
   const [page, setpage] = useState(1);
   const [hasMore, sethasMore] = useState(true)
-  document.title = "SCSDB | Popular ";
+  document.title = "NEVES7 | Popular ";
 
   const getPopular = async () => {
     try {
@@ -73,7 +73,7 @@ const Popular = () => {
         hasMore={hasMore}
         loader={<h1>loading....</h1>}
       >
-        <Cards data={popular} />
+        <Cards data={popular} title={category}/>
       </InfiniteScroll>
     </div>
   ) : (
