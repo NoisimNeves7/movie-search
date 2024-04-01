@@ -24,7 +24,7 @@ export const asyncLoadTv = ({id})=>async(dispatch,getState)=>{
             credits:credits.data.cast,
         }
         dispatch(loadTv(ultmiateData))
-        console.log(ultmiateData)
+        // console.log(ultmiateData)
     } catch (error) {
         console.log("error :",error);
     }

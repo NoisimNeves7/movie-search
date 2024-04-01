@@ -16,7 +16,7 @@ const TvDetails = () => {
   // console.log(id)
 
   const { info } = useSelector((state) => state.tv);
-  console.log(info);
+  // console.log(info);
 
   const navigate = useNavigate();
 
