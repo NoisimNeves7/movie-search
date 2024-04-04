@@ -36,6 +36,7 @@ const Trailer = () => {
         onClick={() => navigate(-1)}
         className="ri-close-fill text-zinc-400 hover:text-[#1770A0] absolute lg:top-10 top-3 right-5 lg:right-20 text-4xl"
       ></i>
+      
       {ytVideo ? (
         <ReactPlayer
           width={widthProp}
