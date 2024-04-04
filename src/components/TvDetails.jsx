@@ -62,14 +62,14 @@ const TvDetails = () => {
       </nav>
 
       {/* part - 2 Tv INFO */}
-      <div className="w-full px-[5%] py-[3%] flex gap-10">
+      <div className="w-full px-[5%] py-[3%] lg:flex gap-10">
         <img
-          className=" h-[60vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] "
+          className="h-[70vh] lg:h-[60vh] object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] "
           src={`https://image.tmdb.org/t/p/original/${info.details.poster_path}`}
           alt=""
         />
         <div className="text-white ">
-          <h1 className="text-5xl  font-black">
+          <h1 className="text-3xl lg:text-5xl   font-black">
             {info.details.name ||
               info.details.title ||
               info.details.original_name ||
@@ -85,14 +85,14 @@ const TvDetails = () => {
               {(info.details.vote_average * 10).toFixed()}
               <sup>%</sup>
             </div>
-            <h1 className=" text-2xl font-semibold">
+            <h1 className=" text-xl lg:text-2xl font-semibold">
               User <br /> Rating
             </h1>
-            <h1 className="text-md">{info.details.first_air_date}</h1>
-            <h1 className="text-md">
+            <h1 className="text-sm lg:text-base">{info.details.first_air_date}</h1>
+            <h1 className="text-sm lg:text-base">
               {info.details.genres.map((value) => value.name).join(", ")}
             </h1>
-            <h1 className="text-md">
+            <h1 className="text-sm lg:text-base">
               {info.details.number_of_seasons} Seasons
             </h1>
           </div>
@@ -104,15 +104,15 @@ const TvDetails = () => {
           )}
           {info.details.overview && (
             <div>
-              <h1 className="text-2xl   mt-3">Overview</h1>
-              <p className="mt-3">{info.details.overview}</p>
+              <h1 className="text-xl lg:text-2xl    mt-8 lg:mt-3">Overview</h1>
+              <p className="mt-3 text-sm lg:text-base">{info.details.overview}</p>
             </div>
           )}
 
           {info.translations && (
             <div>
-              <h1 className="text-2xl   mt-3 ">Available in </h1>
-              <p className="mt-3 mb-8">
+              <h1 className="text-xl lg:text-2xl    mt-8 lg:mt-3 ">Available in </h1>
+              <p className="mt-3 text-sm lg:text-base mb-8">
                 {info.translations
                   .map((value) => value.english_name)
                   .join(", ")}
@@ -122,7 +122,7 @@ const TvDetails = () => {
 
           <Link
             to={`trailer`}
-            className="px-4 py-3 bg-[#1770a0] rounded-lg font-semibold text-xl hover:text-[#1770a0] duration-300 hover:bg-white "
+            className="lg:px-4 lg:py-3 px-3 py-2 text-lg  bg-[#1770a0] rounded-lg font-semibold lg:text-xl hover:text-[#1770a0] duration-300 hover:bg-white "
           >
             Play Trailer
           </Link>
@@ -132,7 +132,7 @@ const TvDetails = () => {
 
 
       {/* part - 3 Available on Platform */}
-      <div className="w-[80%] text-zinc-200  px-[5%] flex flex-col gap-5">
+      <div className="mt-10 lg:mt-0 w-[80%] text-zinc-200  px-[5%] flex flex-col gap-5">
         {info.watchProviders && info.watchProviders.flatrate &&
         <div className="flex gap-10 items-center">
           <h1>Available on Platforms</h1>
@@ -181,13 +181,13 @@ const TvDetails = () => {
 
       {/* part 5 - Seasons*/}
 
-      <div className="px-[5%] mt-16 ">
+      <div className="px-[5%] mt-16  ">
         <h1 className="text-3xl  font-bold text-white mb-5 ">
           Seasons
         </h1>
         {info.details.seasons ? <div className="flex overflow-y-hidden gap-10 ">
         {info.details.seasons.map((value,index)=>(
-          <div key={index} className="min-w-[10vw]  ">
+          <div key={index} className="min-w-[30vw] lg:min-w-[10vw]  ">
             <img className="w-[100%] h-[30vh] object-cover" src={value.poster_path ?`https://image.tmdb.org/t/p/original/${value.poster_path}`:noimage} alt="" />
             <h1 className="text-white mb-10 text-xl mt-3">{value.name}</h1>
           </div>

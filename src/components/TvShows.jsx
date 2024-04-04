@@ -45,8 +45,8 @@ const TvShows = () => {
   }, [category]);
   return tv.length > 0 ? (
     <div className="w-screen h-screen  ">
-      <div className="w-full  flex items-center px-[5%] py-[1%] justify-between">
-        <h1 className="text-3xl font-semibold text-zinc-400">
+      <div className="w-full  lg:flex items-center px-[5%] py-[1%] justify-between">
+        <h1 className="lg:text-3xl text-2xl font-semibold text-zinc-400">
           <i
             onClick={() => navigate(-1)}
             className="ri-arrow-left-line hover:text-[#1770A0] mr-2"
@@ -56,14 +56,16 @@ const TvShows = () => {
             ({category})
           </span>
         </h1>
-        <div className="flex w-[75%] items-center">
+        <div className="lg:flex mt-6 lg:mt-0 w-[100%] lg:w-[75%] items-center">
+        <div className="w-full ">
           <TopNav />
+          </div>
           <Dropdown
             title={"Category"}
             options={["top_rated", "popular", "on_the_air", "airing_today"]}
             funct={(e) => setcategory(e.target.value)}
           />
-          <div className="w-[5%]"></div>
+          <div className=" w-[5%] mt-5 lg:mt-0"></div>
         </div>
       </div>
 

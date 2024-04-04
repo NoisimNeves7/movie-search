@@ -23,20 +23,20 @@ const TopNav = () => {
   }, [query]);
 
   return (
-    <div className="w-[80%] h-[10vh] text-xl text-zinc-400  relative flex items-center mx-auto z-[10] ">
+    <div className="w-full  lg:w-[80%]  h-[10vh]  text-xl text-zinc-400  relative flex items-center mx-auto z-[10] px-2 lg:px-0">
       <i className="ri-search-2-line "></i>
       <input
         onChange={(e) => setQuery(e.target.value)}
         value={query}
         type="text"
         placeholder="Search for a movie ,tv show ,person....."
-        className="bg-transparent border-none outline-none mx-5 p-5 text-zinc-200 w-[50%] "
+        className="bg-transparent border-none outline-none mx-5 p-5 text-zinc-200 w-[80%]  lg:w-[50%] "
       />
       {query && (
         <i onClick={() => setQuery("")} className="ri-close-large-line  hover:text-[#1770A0]"></i>
       )}
 
-      <div className="w-[50%] max-h-[50vh] bg-zinc-200 absolute top-[100%] left-[6%] rounded overflow-auto ">
+      <div className="w-[80%] lg:w-[50%] max-h-[50vh] bg-zinc-200 absolute top-[100%] left-[6%] rounded overflow-auto ">
         {searches.map((value, index) => {
           return (
             <Link

@@ -5,7 +5,7 @@ const Contact = () => {
     document.title='NEVES7 | Contact Us'
   const navigate = useNavigate();
   return (
-    <div className="w-screen h-screen px-[5%] py-[2%] text-zinc-400">
+    <div className="w-screen h-screen px-[5%] py-[2%] text-zinc-400 overflow-y-auto">
       <div>
         <i
           onClick={() => navigate(-1)}

@@ -40,8 +40,12 @@ const PeopleDetails = () => {
       </nav>
 
       {/* part - 2 Tv INFO */}
-      <div className="w-full flex ">
-        <div className="w-[16%] mt-7 flex flex-col  ">
+      <h1 className="text-zinc-400 lg:hidden text-5xl mt-5 font-black">
+            {info.details.name}
+          </h1>
+
+      <div className="w-full lg:flex ">
+        <div className="lg:w-[16%] mt-7 flex flex-col  ">
           <img
             className=" h-[40vh] w-full object-cover shadow-[8px_17px_38px_2px_rgba(0,0,0,.5)] "
             src={
@@ -105,7 +109,7 @@ const PeopleDetails = () => {
             </h1>
             {info.details.birthday ? <h1 className="text-md text-zinc-400 ">{info.details.birthday}</h1> : <h1 className="text-md text-zinc-400 ">Don't have the data</h1>}
           </div>
-
+{/* just trying to add env */}
           <div>
             <h1 className="text-lg text-zinc-400 font-semibold mt-2">
               Deathday
@@ -137,8 +141,8 @@ const PeopleDetails = () => {
         </div>
 
         {/* right side */}
-        <div className="w-[80%]  p-10 ">
-          <h1 className="text-zinc-400 text-6xl font-black">
+        <div className=" lg:w-[80%]  lg:p-10 ">
+          <h1 className="text-zinc-400 hidden lg:block text-6xl font-black">
             {info.details.name}
           </h1>
           <div>
