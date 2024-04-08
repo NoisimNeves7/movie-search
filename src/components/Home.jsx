@@ -7,6 +7,7 @@ import HorizontalCards from "./template/HorizontalCards";
 import Dropdown from "./template/Dropdown";
 import Loader from "./template/Loader";
 import { Link } from "react-router-dom";
+import noimage from '/noimage.jpg'
 
 const Home = () => {
   document.title = "NEVES7 | Homepage";
